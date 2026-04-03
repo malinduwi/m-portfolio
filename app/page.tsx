@@ -1,4 +1,5 @@
 import Script from "next/script";
+import ContactForm from "./contact-form";
 import {
   aboutBlocks,
   certificates,
@@ -477,66 +478,7 @@ export default function HomePage() {
 
             <div className="contact-form-panel">
               <div className="form-top-line" />
-              <form
-                className="cyber-contact-form"
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                action="/thank-you"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-
-                <p hidden>
-                  <label>
-                    Don&apos;t fill this out if you&apos;re human:
-                    <input name="bot-field" />
-                  </label>
-                </p>
-
-                <div className="form-group">
-                  <label htmlFor="name">[ NAME ]</label>
-                  <input type="text" id="name" name="name" placeholder="Enter your name" required />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="email">[ EMAIL ]</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="subject">[ SUBJECT ]</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    placeholder="What would you like to discuss?"
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">[ MESSAGE ]</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    placeholder="Tell me about your opportunity, idea, or project..."
-                    required
-                  />
-                </div>
-
-                <button type="submit" className="send-btn">
-                  <i className="fas fa-paper-plane" />
-                  Send Message
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
