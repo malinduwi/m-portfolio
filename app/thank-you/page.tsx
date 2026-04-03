@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Thank You",
@@ -14,7 +15,14 @@ export default function ThankYouPage() {
     <main className="thankyou-page-shell">
       <section className="contact-section thankyou-section">
         <div className="thankyou-content">
-          <img src="/assets/mawi.png" alt="MAWI logo" className="thankyou-logo" />
+          <Image
+            src="/assets/mawi.png"
+            alt="MAWI logo"
+            className="thankyou-logo"
+            width={100}
+            height={100}
+            priority
+          />
           <p className="section-tag">// secure channel</p>
           <h2>Message Sent</h2>
           <p className="contact-subtext">
