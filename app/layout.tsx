@@ -9,12 +9,9 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: {
-    default: "Malindu Wijayarathna | Cybersecurity Portfolio",
-    template: "%s | Malindu Wijayarathna",
-  },
+  title: "Malindu Wijayarathna Portfolio",
   description:
-    "Cybersecurity portfolio of Malindu Wijayarathna featuring security projects, certifications, technical skills, and contact details.",
+    "Personal portfolio of Malindu Wijayarathna featuring projects, certifications, technical skills, and contact details.",
   keywords: [
     "Malindu Wijayarathna",
     "cybersecurity portfolio",
@@ -46,9 +43,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: "Malindu Wijayarathna | Cybersecurity Portfolio",
+    title: "Malindu Wijayarathna Portfolio",
     description:
-      "Explore Malindu Wijayarathna's cybersecurity portfolio, including projects, certifications, technical skills, and contact information.",
+      "Personal portfolio of Malindu Wijayarathna featuring projects, certifications, technical skills, and contact details.",
     siteName: "Malindu Wijayarathna Portfolio",
     images: [
       {
@@ -61,9 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Malindu Wijayarathna | Cybersecurity Portfolio",
+    title: "Malindu Wijayarathna Portfolio",
     description:
-      "Cybersecurity portfolio with projects, certifications, skills, and contact information.",
+      "Personal portfolio of Malindu Wijayarathna featuring projects, certifications, technical skills, and contact details.",
     images: ["/twitter-image"],
   },
   icons: {
