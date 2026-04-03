@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Script from "next/script";
 import ContactForm from "./contact-form";
 import {
@@ -252,7 +253,7 @@ export default function HomePage() {
       <header className="navbar">
         <div className="content-wrap nav-inner">
           <div className="logo">
-            <img src="/assets/mawi.png" alt="MAWI Logo" />
+            <Image src="/assets/mawi.png" alt="MAWI Logo" width={109} height={50} priority />
           </div>
           <div className="nav-right">
             <nav id="primary-navigation">
@@ -315,7 +316,15 @@ export default function HomePage() {
               <span className="orbit orbit-1" />
               <span className="orbit orbit-2" />
               <span className="scan-line" />
-              <img src="/assets/profile.png" alt="Malindu profile photo" className="avatar" />
+              <Image
+                src="/assets/profile.png"
+                alt="Malindu profile photo"
+                className="avatar"
+                width={330}
+                height={330}
+                priority
+                sizes="(max-width: 768px) 270px, (max-width: 1200px) 29vw, 330px"
+              />
             </div>
           </div>
         </div>
@@ -369,7 +378,12 @@ export default function HomePage() {
             {projects.map((project) => (
               <article className="project-card reveal-up" key={project.title}>
                 <div className="project-image">
-                  <img src={project.image} alt={project.alt} />
+                  <Image
+                    src={project.image}
+                    alt={project.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                   <span className="project-badge">{project.badge}</span>
                 </div>
                 <div className="project-content">
