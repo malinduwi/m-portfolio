@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Thank You",
+  description: "Confirmation page after a successful portfolio contact form submission.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function ThankYouPage() {
   return (
     <main className="thankyou-page-shell">

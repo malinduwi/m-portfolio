@@ -77,15 +77,30 @@ window.addEventListener("mousemove", (e) => {
   }
 
   // Polygon parallax
-  const x = (e.clientX / window.innerWidth - 0.5) * 34;
-  const y = (e.clientY / window.innerHeight - 0.5) * 34;
+  const x = (e.clientX / window.innerWidth - 0.5) * 66;
+  const y = (e.clientY / window.innerHeight - 0.5) * 66;
 
   polygons.forEach((poly, index) => {
-    const speed = (index + 1) * 0.14;
-    const rotation = (x + y) * 0.04 * (index % 2 === 0 ? 1 : -1);
-    const scale = 1 + index * 0.01;
+    const motionProfile =
+      poly.classList.contains("poly-left") ? { speed: 0.46, rotation: 0.105, scale: 1.018 } :
+      poly.classList.contains("poly-right") ? { speed: 0.9, rotation: -0.19, scale: 1.04 } :
+      poly.classList.contains("poly-mid-left") ? { speed: 0.42, rotation: 0.085, scale: 1.018 } :
+      poly.classList.contains("poly-mid-right") ? { speed: 0.82, rotation: -0.155, scale: 1.04 } :
+      poly.classList.contains("poly-bottom-left") ? { speed: 0.36, rotation: 0.065, scale: 1.018 } :
+      poly.classList.contains("poly-bottom-right") ? { speed: 0.36, rotation: -0.065, scale: 1.018 } :
+      poly.classList.contains("poly-web-left") ? { speed: 0.6, rotation: 0.11, scale: 1.03 } :
+      poly.classList.contains("poly-web-right") ? { speed: 1.02, rotation: -0.19, scale: 1.05 } :
+      poly.classList.contains("poly-web-top") ? { speed: 0.46, rotation: 0.078, scale: 1.018 } :
+      poly.classList.contains("poly-side-left") ? { speed: 0.52, rotation: 0.088, scale: 1.03 } :
+      poly.classList.contains("poly-mid-edge-left") ? { speed: 0.46, rotation: 0.078, scale: 1.018 } :
+      poly.classList.contains("poly-mid-edge-right") ? { speed: 0.88, rotation: -0.145, scale: 1.04 } :
+      poly.classList.contains("poly-upper-edge-right") ? { speed: 0.72, rotation: -0.126, scale: 1.035 } :
+      poly.classList.contains("poly-lower-edge-right") ? { speed: 0.92, rotation: -0.145, scale: 1.04 } :
+      { speed: (index + 1) * 0.3, rotation: (index % 2 === 0 ? 0.078 : -0.078), scale: 1.018 };
 
-    poly.style.transform = `translate(${x * speed}px, ${y * speed}px) rotate(${rotation}deg) scale(${scale})`;
+    poly.style.transform =
+      `translate(${x * motionProfile.speed}px, ${y * motionProfile.speed}px) ` +
+      `rotate(${(x + y) * motionProfile.rotation}deg) scale(${motionProfile.scale})`;
   });
 });
 

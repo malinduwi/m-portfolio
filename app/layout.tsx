@@ -1,9 +1,76 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteUrl =
+  process.env.URL ??
+  process.env.DEPLOY_PRIME_URL ??
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: "Malindu Wijayarathna Portfolio",
-  description: "Cybersecurity portfolio of Malindu Wijayarathna.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Malindu Wijayarathna | Cybersecurity Portfolio",
+    template: "%s | Malindu Wijayarathna",
+  },
+  description:
+    "Cybersecurity portfolio of Malindu Wijayarathna featuring security projects, certifications, technical skills, and contact details.",
+  keywords: [
+    "Malindu Wijayarathna",
+    "cybersecurity portfolio",
+    "security analyst portfolio",
+    "Sri Lanka cybersecurity",
+    "OWASP",
+    "SOC analyst",
+    "vulnerability assessment",
+    "OSINT",
+  ],
+  authors: [{ name: "Malindu Wijayarathna" }],
+  creator: "Malindu Wijayarathna",
+  publisher: "Malindu Wijayarathna",
+  category: "technology",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: "Malindu Wijayarathna | Cybersecurity Portfolio",
+    description:
+      "Explore Malindu Wijayarathna's cybersecurity portfolio, including projects, certifications, technical skills, and contact information.",
+    siteName: "Malindu Wijayarathna Portfolio",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Malindu Wijayarathna cybersecurity portfolio preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Malindu Wijayarathna | Cybersecurity Portfolio",
+    description:
+      "Cybersecurity portfolio with projects, certifications, skills, and contact information.",
+    images: ["/twitter-image"],
+  },
+  icons: {
+    icon: "/assets/mawi.png",
+    shortcut: "/assets/mawi.png",
+    apple: "/assets/mawi.png",
+  },
 };
 
 export default function RootLayout({
